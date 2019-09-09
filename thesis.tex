@@ -1,0 +1,79 @@
+\documentclass[english,letterpaper,12pt]{thesis}
+
+\usepackage{listings}
+\usepackage{emnlp2017}
+\usepackage{multirow}
+
+\newcommand*\rot{\rotatebox[origin=c]{90}}
+\newcommand*\revrot{\rotatebox[origin=c]{-90}}
+
+\newcommand{\executeiffilenewer}[3]{%
+	\ifnum\pdfstrcmp{\pdffilemoddate{#1}}%
+	{\pdffilemoddate{#2}}>0%
+	{\immediate\write18{#3}}\fi%
+}
+
+\newcommand{\includesvg}[1]{%
+	\executeiffilenewer{#1.svg}{#1.pdf}%
+	{inkscape             -z             -D             --file=#1.svg             %
+		--export-pdf=#1.pdf             --export-latex}%
+	\input{#1.pdf_tex}%
+}
+
+% Please compile with XeLatex! 
+
+\begin{document}
+
+
+\begin{titlepage}
+
+\begin{center}
+\vspace*{1.4cm}
+
+% For Master's
+\Large 修士論文
+
+% For Ph.D.
+%\Large 博士論文
+
+
+\vspace*{1.8cm}
+\LARGE \textbf{Your title here}
+\vspace{1.0cm}
+\\
+\LARGE \textbf{日本語でタイトル}
+
+\vspace{3.0cm}
+
+\LARGE \textbf{[指導教員　松尾 豊 准教授]}
+
+\vspace{1.0cm}
+\LARGE \textbf{東京大学大学院 工学系研究科 \\ 技術経営戦略学専攻}
+
+\vspace{0.4cm}
+\huge \textbf{\underline{Your Name Here}}
+
+\end{center}
+
+\end{titlepage}
+
+\include{00_preface}
+
+\include{01_introduction}
+
+\bibliographystyle{emnlp_natbib}
+\bibliography{bibliography}
+
+% comment the following block for Ph.D. thesis
+\newpage
+\thispagestyle{empty} 
+\hspace{3cm} \framebox{
+    \parbox[c][19.8cm]{2.275cm}{
+        \hspace{0.2cm}
+        \centering 
+        \revrot{\CJKfamily{cjk-vert} ２０１９年度修論　　技術経営戦略学専攻　　松尾研究室　　３７ー００００００　　氏名}
+    }
+}
+
+
+\end{document}\grid
