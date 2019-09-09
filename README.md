@@ -1,6 +1,6 @@
 # Latex Thesis Template 
 
-> View and this template in Overleaf clicking [here](https://www.overleaf.com/read/fpwdbshkbbpj).
+> View and edit this template in Overleaf by clicking [here](https://www.overleaf.com/read/fpwdbshkbbpj).
 
 This repository contains a full-fledged LaTeX thesis template that has been specifically customized for the department of TMI at the Graduate School of Engineering, the University of Tokyo. The `thesis.cls` template provides generic functionality, though, and can be easily adapted or extended to include additional features. 
 
